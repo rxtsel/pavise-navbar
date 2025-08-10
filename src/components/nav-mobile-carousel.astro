@@ -1,0 +1,125 @@
+---
+const previewProducts = [
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/DAD-with-AwardSeals-updated_3890aca3-e7bc-40b0-9335-a1589c029e92.png?v=1738341533&width=600",
+    name: "DYNAMIC AGE DEFENSE",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/BSR-FullSize-Updated0527_98cb69f9-caed-4e4f-a713-3591f02db59e.png?v=1751376524&width=600",
+    name: "BIOADAPTIVE STRESS REPAIR",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/PEL-PDP-1.png?v=1748962850&width=600",
+    name: "PRECISION EYE LIFT",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/DAD-with-AwardSeals-updated_3890aca3-e7bc-40b0-9335-a1589c029e92.png?v=1738341533&width=600",
+    name: "DYNAMIC AGE DEFENSE",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/BSR-FullSize-Updated0527_98cb69f9-caed-4e4f-a713-3591f02db59e.png?v=1751376524&width=600",
+    name: "BIOADAPTIVE STRESS REPAIR",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/PEL-PDP-1.png?v=1748962850&width=600",
+    name: "PRECISION EYE LIFT",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/DAD-with-AwardSeals-updated_3890aca3-e7bc-40b0-9335-a1589c029e92.png?v=1738341533&width=600",
+    name: "DYNAMIC AGE DEFENSE",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/BSR-FullSize-Updated0527_98cb69f9-caed-4e4f-a713-3591f02db59e.png?v=1751376524&width=600",
+    name: "BIOADAPTIVE STRESS REPAIR",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/PEL-PDP-1.png?v=1748962850&width=600",
+    name: "PRECISION EYE LIFT",
+    url: "#",
+  },
+];
+---
+
+<div class="swiper nav-mobile-carousel mb-3 w-full">
+  <ul class="swiper-wrapper mb-12">
+    {
+      previewProducts.map((p) => (
+        <li class="swiper-slide flex w-[161.48px] shrink-0 flex-col">
+          <img
+            src={p.picture}
+            alt={`Product ${p.name}`}
+            class="ojbect-cover aspect-square size-[161.48px] rounded-lg border-2 border-white/50"
+          />
+          <h3 class="pt-2 text-[10px] font-semibold">{p.name}</h3>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="swiper-pagination absolute !top-[unset] bottom-0 mt-6"></div>
+</div>
+
+<style is:global>
+  .nav-mobile-carousel
+    .swiper-pagination-progressbar
+    .swiper-pagination-progressbar-fill {
+    height: 1.5px !important;
+    background-color: #000;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.5) 0,
+      #fff 100%
+    );
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 15px;
+      width: 15px;
+      background-color: #fff;
+      transform: translateY(-50%, 50%);
+      filter: blur(15px) brightness(1) drop-shadow(0px 0px 2px #fff);
+      z-index: 10;
+    }
+  }
+</style>
+
+<script>
+  import swiper from "swiper";
+  import { Pagination } from "swiper/modules";
+
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  new swiper(".nav-mobile-carousel", {
+    direction: "horizontal",
+    loop: false,
+    modules: [Pagination],
+    slidesPerView: 2.5,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+</script>

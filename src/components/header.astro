@@ -9,11 +9,13 @@ import MapIndicator from "@/components/icons/map-indicator.svg";
 import Question from "@/components/icons/question.svg";
 import Instagram from "@/components/icons/instagram.svg";
 import Facebook from "@/components/icons/facebook.svg";
+
+import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 ---
 
 <header>
   <div
-    class="mx-auto grid grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
+    class="mx-auto grid max-w-[1600px] grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
   >
     <button aria-label="Burger" class="w-fit lg:hidden" id="burger">
       <Burger class="size-4 opacity-70" />
@@ -123,20 +125,7 @@ import Facebook from "@/components/icons/facebook.svg";
       <a href="#" class="nav-item-hover-border">UV Camera</a>
     </nav>
 
-    <ul
-      class:list={[
-        "m-0 flex list-none gap-2.5 overflow-x-auto p-0",
-        "*:block *:aspect-square *:size-[161.48px] *:rounded-lg *:bg-white/50",
-      ]}
-    >
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-
-    <hr class="mt-8 h-0.5 w-2/3 bg-white" />
+    <NavMobileCarousel />
 
     <button
       class="max-h-[38.91px] w-full border border-white px-4 py-3 text-center text-[13px] leading-none font-semibold uppercase"
