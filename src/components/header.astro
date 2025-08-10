@@ -1,15 +1,28 @@
 ---
 import Chevron from "@/components/icons/chevron.svg";
+import Burger from "@/components/icons/burger.svg";
+import User from "@/components/icons/user.svg";
+import Close from "@/components/icons/close.svg";
+import Search from "@/components/icons/search.svg";
+import Arrow from "@/components/icons/arrow.svg";
+import MapIndicator from "@/components/icons/map-indicator.svg";
+import Question from "@/components/icons/question.svg";
+import Instagram from "@/components/icons/instagram.svg";
+import Facebook from "@/components/icons/facebook.svg";
 ---
 
 <header>
   <div
-    class="mx-auto grid grid-cols-3 items-center px-5 py-[15px] lg:px-10 lg:py-5"
+    class="mx-auto grid grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
   >
+    <button aria-label="Burger" class="w-fit lg:hidden" id="burger">
+      <Burger class="size-4 opacity-70" />
+    </button>
     <nav
       class:list={[
-        "flex-end flex",
-        "*:ml-1.5 *:flex *:shrink-0 *:items-center *:gap-1 *:pb-[5px] *:text-right *:text-[15px] *:font-semibold *:uppercase *:transition-opacity *:first-of-type:ml-0",
+        "flex-end hidden lg:flex",
+        "*:ml-1.5 *:flex *:shrink-0 *:items-center *:gap-1 *:text-right *:font-semibold *:uppercase *:transition-opacity *:first-of-type:ml-0 lg:*:pb-[5px]",
+        "*:hidden *:text-[13px] *:lg:flex *:lg:text-[15px]",
       ]}
     >
       <a href="#" class="group/item item hover:!opacity-100">
@@ -49,7 +62,8 @@ import Chevron from "@/components/icons/chevron.svg";
     <nav
       class:list={[
         "flex justify-end",
-        "*:ml-1.5 *:shrink-0 *:pb-[5px] *:text-right *:text-[15px] *:font-semibold *:uppercase *:first-of-type:ml-0",
+        "*:ml-1.5 *:shrink-0 *:text-right *:font-semibold *:uppercase *:first-of-type:ml-0 lg:*:pb-[5px]",
+        "*:hidden *:text-[13px] *:last-of-type:block *:lg:block lg:*:text-[15px]",
       ]}
     >
       <a href="#" class="nav-item-hover-border">Partner locator</a>
@@ -59,6 +73,120 @@ import Chevron from "@/components/icons/chevron.svg";
     </nav>
   </div>
 </header>
+
+<nav
+  class="-translate-x-fulltodo fixed inset-0 flex flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
+  id="nav-mobile"
+>
+  <header
+    class="mx-auto grid w-full grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
+  >
+    <button class="item-center flex w-fit gap-1">
+      <User class="h-auto w-[13px]" />
+      <a href="#" class="text-[13px] underline underline-offset-2"> Sign in </a>
+    </button>
+    <div class="flex justify-center">
+      <a href="/" aria-label="Pavise logo">
+        <img
+          src="/images/logo.webp"
+          alt="Pavise Logo"
+          class="logo aspect-[93/29] h-[21px] lg:h-[29px]"
+        />
+      </a>
+    </div>
+    <button aria-label="Burger close" class="ml-auto w-fit" id="burger-close">
+      <Close class="size-3.5" />
+    </button>
+  </header>
+  <section
+    class="flex w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
+  >
+    <div class="mt-1.5 flex w-full gap-2 rounded-full border border-white px-4">
+      <Search class="" width={18} />
+      <input
+        type="text"
+        placeholder="Search"
+        class="focus:outline-non h-[45px] w-full bg-transparent text-[13px] font-semibold text-white placeholder:text-white"
+      />
+    </div>
+
+    <nav
+      class:list={[
+        "mb-auto flex flex-col items-start justify-center gap-[20px] lg:gap-[12px]",
+        "*:shrink-0 *:text-right *:font-semibold *:capitalize *:first-of-type:ml-0 lg:*:pb-[5px]",
+        "*:text-sm *:last-of-type:block *:lg:block lg:*:text-[15px]",
+      ]}
+    >
+      <a href="#" class="nav-item-hover-border">Skincare</a>
+      <a href="#" class="nav-item-hover-border">Bundles</a>
+      <a href="#" class="nav-item-hover-border">Refills</a>
+      <a href="#" class="nav-item-hover-border">UV Camera</a>
+    </nav>
+
+    <ul
+      class:list={[
+        "m-0 flex list-none gap-2.5 overflow-x-auto p-0",
+        "*:block *:aspect-square *:size-[161.48px] *:rounded-lg *:bg-white/50",
+      ]}
+    >
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <hr class="mt-8 h-0.5 w-2/3 bg-white" />
+
+    <button
+      class="max-h-[38.91px] w-full border border-white px-4 py-3 text-center text-[13px] leading-none font-semibold uppercase"
+    >
+      Shop All
+    </button>
+  </section>
+
+  <ul
+    class:list={[
+      "flex-grow pt-6",
+      "*:flex *:items-center *:border-y *:border-white/50 *:px-[15px] *:py-3 *:text-lg *:uppercase *:first-of-type:border-b-0",
+    ]}
+  >
+    <li>
+      Science
+      <Arrow width={14} height={14} class="ml-auto" />
+    </li>
+    <li>
+      In the lab
+      <Arrow width={14} height={14} class="ml-auto" />
+    </li>
+  </ul>
+
+  <footer class="flex flex-col gap-6 px-[15px] py-4">
+    <nav
+      class:list={[
+        "flex flex-col items-start gap-2",
+        "*:flex *:items-center *:gap-2 *:text-[13px] *:text-white *:underline",
+      ]}
+    >
+      <a href="#">
+        <MapIndicator width={14} height={14} class="inline-block" />
+        Partner locator
+      </a>
+      <a href="#">
+        <Question width={14} height={14} class="inline-block" />
+        FAQ
+      </a>
+    </nav>
+    <nav class="flex gap-6 pb-6">
+      <a aria-label="instagram" href="#">
+        <Instagram height={20} class="inline-block" />
+      </a>
+      <a aria-label="facebook" href="#">
+        <Facebook height={20} class="inline-block" />
+      </a>
+    </nav>
+  </footer>
+</nav>
 
 <style>
   nav:has(.item:hover) .item:not(:hover),
@@ -79,3 +207,21 @@ import Chevron from "@/components/icons/chevron.svg";
     }
   }
 </style>
+
+<script>
+  const burger = document.getElementById("burger") as HTMLButtonElement;
+  const burgerClose = document.getElementById(
+    "burger-close",
+  ) as HTMLButtonElement;
+  const navMobile = document.getElementById("nav-mobile") as HTMLDivElement;
+
+  burger.addEventListener("click", () => {
+    navMobile.classList.toggle("-translate-x-full");
+    document.body.classList.toggle("overflow-y-hidden");
+  });
+
+  burgerClose.addEventListener("click", () => {
+    navMobile.classList.toggle("-translate-x-full");
+    document.body.classList.toggle("overflow-y-auto");
+  });
+</script>
