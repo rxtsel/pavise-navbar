@@ -13,7 +13,7 @@ import Facebook from "@/components/icons/facebook.svg";
 import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 ---
 
-<header>
+<header class="fixed inset-x-0 top-0">
   <div
     class="mx-auto grid max-w-[1600px] grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
   >
@@ -22,8 +22,8 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
     </button>
     <nav
       class:list={[
-        "flex-end hidden lg:flex",
-        "*:ml-1.5 *:flex *:shrink-0 *:items-center *:gap-1 *:text-right *:font-semibold *:uppercase *:transition-opacity *:first-of-type:ml-0 lg:*:pb-[5px]",
+        "flex-end hidden gap-x-1.5 lg:flex lg:gap-x-7",
+        "*:flex *:shrink-0 *:items-center *:gap-x-1 *:text-right *:leading-none *:font-semibold *:uppercase *:transition-opacity lg:*:gap-x-1.5",
         "*:hidden *:text-[13px] *:lg:flex *:lg:text-[15px]",
       ]}
     >
@@ -63,8 +63,8 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
     </div>
     <nav
       class:list={[
-        "flex justify-end",
-        "*:ml-1.5 *:shrink-0 *:text-right *:font-semibold *:uppercase *:first-of-type:ml-0 lg:*:pb-[5px]",
+        "flex justify-end gap-x-1.5 lg:gap-x-4.5",
+        "*:shrink-0 *:text-right *:font-semibold *:uppercase lg:*:pb-[5px]",
         "*:hidden *:text-[13px] *:last-of-type:block *:lg:block lg:*:text-[15px]",
       ]}
     >
@@ -77,7 +77,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 </header>
 
 <nav
-  class="-translate-x-fulltodo fixed inset-0 flex flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
+  class="fixed inset-0 flex -translate-x-full flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
   id="nav-mobile"
 >
   <header
