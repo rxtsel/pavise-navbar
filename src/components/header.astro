@@ -1,0 +1,81 @@
+---
+import Chevron from "@/components/icons/chevron.svg";
+---
+
+<header>
+  <div
+    class="mx-auto grid grid-cols-3 items-center border border-blue-400 px-5 py-[15px] lg:px-10 lg:py-5"
+  >
+    <nav
+      class:list={[
+        "flex-end flex",
+        "*:ml-1.5 *:flex *:shrink-0 *:items-center *:gap-1 *:pb-[5px] *:text-right *:text-[15px] *:font-semibold *:uppercase *:transition-opacity *:first-of-type:ml-0",
+      ]}
+    >
+      <a href="#" class="group/item item hover:!opacity-100">
+        Shop
+        <Chevron
+          width={9}
+          height={5}
+          class="delay-100 group-hover/item:rotate-180"
+        />
+      </a>
+      <a href="#" class="group/item item hover:opacity-100">
+        Science
+        <Chevron
+          width={9}
+          height={5}
+          class="delay-100 group-hover/item:rotate-180"
+        />
+      </a>
+      <a href="#" class="group/item item hover:opacity-100">
+        In the lab
+        <Chevron
+          width={9}
+          height={5}
+          class="delay-100 group-hover/item:rotate-180"
+        />
+      </a>
+    </nav>
+    <div class="flex justify-center">
+      <a href="/" aria-label="Pavise logo">
+        <img
+          src="/images/logo.webp"
+          alt="Pavise Logo"
+          class="logo aspect-[93/29] h-[21px] lg:h-[29px]"
+        />
+      </a>
+    </div>
+    <nav
+      class:list={[
+        "flex justify-end",
+        "*:ml-1.5 *:shrink-0 *:pb-[5px] *:text-right *:text-[15px] *:font-semibold *:uppercase *:first-of-type:ml-0",
+      ]}
+    >
+      <a href="#" class="nav-item-hover-border">Partner locator</a>
+      <a href="#" class="nav-item-hover-border">Search</a>
+      <a href="#" class="nav-item-hover-border">Account</a>
+      <a href="#" class="nav-item-hover-border">Cart(0)</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  nav:has(.item:hover) .item:not(:hover),
+  nav:has(.item:focus-visible) .item:not(:focus-visible) {
+    opacity: 0.5;
+  }
+
+  .nav-item-hover-border {
+    background-image: linear-gradient(to bottom, transparent 20%, #fff 21%);
+    background-position: 50% 1.3rem;
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s;
+
+    &:hover {
+      background-size: 100% 2px;
+      transition: background-size 0.3s;
+    }
+  }
+</style>
