@@ -13,7 +13,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 ---
 
 <nav
-  class="fixed inset-0 flex -translate-x-full flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
+  class="fixed inset-0 flex -translate-x-full flex-col overflow-y-auto bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
   id="nav-mobile"
 >
   <header
@@ -37,7 +37,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
     </button>
   </header>
   <section
-    class="flex w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
+    class="flex min-h-fit w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
   >
     <div class="mt-1.5 flex w-full gap-2 rounded-full border border-white px-4">
       <Search class="" width={18} />
