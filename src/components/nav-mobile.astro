@@ -1,0 +1,121 @@
+---
+import User from "@/components/icons/user.svg";
+import Close from "@/components/icons/close.svg";
+import Search from "@/components/icons/search.svg";
+import Arrow from "@/components/icons/arrow.svg";
+import MapIndicator from "@/components/icons/map-indicator.svg";
+import Question from "@/components/icons/question.svg";
+import Instagram from "@/components/icons/instagram.svg";
+import Facebook from "@/components/icons/facebook.svg";
+
+import Nav3 from "@/components/nav-3.astro";
+import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
+---
+
+<nav
+  class="fixed inset-0 flex -translate-x-full flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
+  id="nav-mobile"
+>
+  <header
+    class="mx-auto grid w-full grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
+  >
+    <button class="item-center flex w-fit gap-1">
+      <User class="h-auto w-[13px]" />
+      <a href="#" class="text-[13px] underline underline-offset-2"> Sign in </a>
+    </button>
+    <div class="flex justify-center">
+      <a href="/" aria-label="Pavise logo">
+        <img
+          src="/images/logo.webp"
+          alt="Pavise Logo"
+          class="logo aspect-[93/29] h-[21px] lg:h-[29px]"
+        />
+      </a>
+    </div>
+    <button aria-label="Burger close" class="ml-auto w-fit" id="burger-close">
+      <Close class="size-3.5" />
+    </button>
+  </header>
+  <section
+    class="flex w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
+  >
+    <div class="mt-1.5 flex w-full gap-2 rounded-full border border-white px-4">
+      <Search class="" width={18} />
+      <input
+        type="text"
+        placeholder="Search"
+        class="focus:outline-non h-[45px] w-full bg-transparent text-[13px] font-semibold text-white placeholder:text-white"
+      />
+    </div>
+
+    <Nav3 />
+
+    <NavMobileCarousel />
+
+    <button
+      class="max-h-[38.91px] w-full border border-white px-4 py-3 text-center text-[13px] leading-none font-semibold uppercase"
+    >
+      Shop All
+    </button>
+  </section>
+
+  <ul
+    class:list={[
+      "flex-grow pt-6",
+      "*:flex *:items-center *:border-y *:border-white/50 *:px-[15px] *:py-3 *:text-lg *:uppercase *:first-of-type:border-b-0",
+    ]}
+  >
+    <li>
+      Science
+      <Arrow width={14} height={14} class="ml-auto" />
+    </li>
+    <li>
+      In the lab
+      <Arrow width={14} height={14} class="ml-auto" />
+    </li>
+  </ul>
+
+  <footer class="flex flex-col gap-6 px-[15px] py-4">
+    <nav
+      class:list={[
+        "flex flex-col items-start gap-2",
+        "*:flex *:items-center *:gap-2 *:text-[13px] *:text-white *:underline",
+      ]}
+    >
+      <a href="#">
+        <MapIndicator width={14} height={14} class="inline-block" />
+        Partner locator
+      </a>
+      <a href="#">
+        <Question width={14} height={14} class="inline-block" />
+        FAQ
+      </a>
+    </nav>
+    <nav class="flex gap-6 pb-6">
+      <a aria-label="instagram" href="#">
+        <Instagram height={20} class="inline-block" />
+      </a>
+      <a aria-label="facebook" href="#">
+        <Facebook height={20} class="inline-block" />
+      </a>
+    </nav>
+  </footer>
+</nav>
+
+<script>
+  const burger = document.getElementById("burger") as HTMLButtonElement;
+  const burgerClose = document.getElementById(
+    "burger-close",
+  ) as HTMLButtonElement;
+  const navMobile = document.getElementById("nav-mobile") as HTMLDivElement;
+
+  burger.addEventListener("click", () => {
+    navMobile.classList.toggle("-translate-x-full");
+    document.body.classList.toggle("overflow-y-hidden");
+  });
+
+  burgerClose.addEventListener("click", () => {
+    navMobile.classList.toggle("-translate-x-full");
+    document.body.classList.toggle("overflow-y-auto");
+  });
+</script>

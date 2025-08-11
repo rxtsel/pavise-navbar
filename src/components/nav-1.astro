@@ -1,0 +1,189 @@
+---
+import Chevron from "@/components/icons/chevron.svg";
+import Nav3 from "@/components/nav-3.astro";
+import Nav4 from "@/components/nav-4.astro";
+
+const previewProducts = [
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/DAD-with-AwardSeals-updated_3890aca3-e7bc-40b0-9335-a1589c029e92.png?v=1738341533&width=600",
+    picture2:
+      "https://pavise.com/cdn/shop/files/DAD-PDP-Updated-Jun10.png?v=1749585950&width=400",
+    name: "DYNAMIC AGE DEFENSE",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/BSR-FullSize-Updated0527_98cb69f9-caed-4e4f-a713-3591f02db59e.png?v=1751376524&width=600",
+    picture2:
+      "https://pavise.com/cdn/shop/files/BSR-PDP-1a_1.png?v=1751376574&width=400",
+    name: "BIOADAPTIVE STRESS REPAIR",
+    url: "#",
+  },
+  {
+    picture:
+      "https://pavise.com/cdn/shop/files/PEL-PDP-1.png?v=1748962850&width=600",
+    pricture2:
+      "https://pavise.com/cdn/shop/files/PEL-PDP-2.png?v=1753994668&width=400",
+    name: "PRECISION EYE LIFT",
+    url: "#",
+  },
+];
+---
+
+<nav
+  class:list={[
+    "flex-end relative hidden gap-x-1.5 lg:flex lg:gap-x-7",
+    "*:flex *:shrink-0 *:items-center *:gap-x-1 *:text-right *:leading-none *:font-semibold *:uppercase *:transition-opacity lg:*:gap-x-1.5",
+    "*:hidden *:text-[13px] *:lg:flex *:lg:text-[15px]",
+  ]}
+>
+  <div class="group/item">
+    <button
+      class="group/btn pointer item flex shrink-0 items-center gap-x-1.5 text-right text-[13px] leading-none font-semibold uppercase transition-opacity hover:opacity-100 lg:text-[15px]"
+    >
+      Shop
+      <Chevron
+        width={9}
+        height={5}
+        class="delay-100 group-hover/btn:rotate-180"
+      />
+    </button>
+    <div
+      class:list={[
+        "absolute inset-x-0 -top-full -z-10 -ml-10 flex max-h-0 w-max overflow-hidden bg-black px-10 transition-all duration-500 group-hover/item:max-h-[600px]",
+        "!w-[100vw] max-w-[1600px] pt-13.5",
+      ]}
+    >
+      <div
+        class="flex w-full shrink-0 snap-x snap-mandatory flex-row justify-between py-[80px]"
+      >
+        <div class="flex shrink-0 flex-col gap-[52px]">
+          <Nav3 class="grow" />
+          <a
+            href="#"
+            class="block w-fit border-2 border-white bg-black px-10 py-[9px] text-white transition-colors hover:bg-white hover:text-black"
+          >
+            Shop all
+          </a>
+        </div>
+        <ul class="grid w-fit grid-cols-3 gap-4.5">
+          {
+            previewProducts.map((p) => (
+              <li class="group/cart-item relative flex w-[323px] shrink-0 flex-col">
+                <img
+                  src={p.picture}
+                  alt={`Product ${p.name}`}
+                  class:list={[
+                    "relative aspect-square size-[323px] rounded-lg border-2 border-white/50 object-cover",
+                  ]}
+                />
+                <h3 class="pt-2 text-left text-[18px] font-semibold">
+                  {p.name}
+                </h3>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="group/item">
+    <button
+      class="group/btn pointer item flex shrink-0 items-center gap-x-1.5 text-right text-[13px] leading-none font-semibold uppercase transition-opacity hover:opacity-100 lg:text-[15px]"
+    >
+      Science
+      <Chevron
+        width={9}
+        height={5}
+        class="delay-100 group-hover/btn:rotate-180"
+      />
+    </button>
+    <div
+      class:list={[
+        "absolute inset-x-0 -top-full -z-10 -ml-10 flex max-h-0 w-max overflow-hidden bg-black px-10 capitalize transition-all duration-500 group-hover/item:max-h-[600px]",
+        "!w-[100vw] max-w-[1600px] pt-13.5",
+      ]}
+    >
+      <nav
+        class:list={[
+          "mx-auto mb-auto flex w-fit items-start justify-center gap-[20px] py-[80px] lg:gap-[67px]",
+          "*:shrink-0 *:text-right *:font-semibold *:capitalize *:first-of-type:ml-0",
+          "*:text-sm *:last-of-type:block *:lg:block lg:*:text-[18px]",
+        ]}
+      >
+        <a href="#" class="nav-item-hover-border">Our biotechnology</a>
+        <a href="#" class="nav-item-hover-border">Safety</a>
+        <a href="#" class="nav-item-hover-border">Scientific team</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="group/item">
+    <button
+      class="group/btn pointer item flex shrink-0 items-center gap-x-1.5 text-right text-[13px] leading-none font-semibold uppercase transition-opacity hover:opacity-100 lg:text-[15px]"
+    >
+      In the lab
+      <Chevron
+        width={9}
+        height={5}
+        class="delay-100 group-hover/btn:rotate-180"
+      />
+    </button>
+    <div
+      class:list={[
+        "absolute inset-x-0 -top-full -z-10 -ml-10 flex max-h-0 w-max overflow-hidden bg-black px-10 transition-all duration-500 group-hover/item:max-h-[600px]",
+        "!w-[100vw] max-w-[1600px] pt-13.5",
+      ]}
+    >
+      <div
+        class="flex w-full shrink-0 snap-x snap-mandatory flex-row justify-center gap-[20px] py-[80px] lg:gap-[67px]"
+      >
+        <div class="flex shrink-0 flex-col gap-[52px]">
+          <div class="flex flex-col justify-start">
+            <h3 class="mb-6 text-left capitalize">Browser by Category</h3>
+            <Nav4 class="grow" />
+          </div>
+          <a
+            href="#"
+            class="block w-fit border-2 border-white bg-black px-10 py-[9px] text-white transition-colors hover:bg-white hover:text-black"
+          >
+            Read all articles
+          </a>
+        </div>
+
+        <hr class="h-full w-[1.5px] bg-white/50" />
+
+        <div>
+          <h3 class="mb-6 text-left capitalize">Highlights</h3>
+          <ul class="grid w-fit grid-cols-3 gap-4.5">
+            {
+              previewProducts.map((p) => (
+                <li class="group/cart-item relative flex h-[172px] w-[223px] shrink-0 flex-col">
+                  <img
+                    src={p.picture}
+                    alt={`Product ${p.name}`}
+                    class:list={[
+                      "relative aspect-[212/154] transform-gpu rounded-lg border-2 border-white/50 object-cover lg:aspect-[223/172]",
+                    ]}
+                  />
+                  <h3 class="pt-2 text-left text-[15px] font-semibold">
+                    {p.name}
+                  </h3>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav:has(.item:hover) .item:not(:hover),
+  nav:has(.item:focus-visible) .item:not(:focus-visible) {
+    opacity: 0.5;
+  }
+</style>

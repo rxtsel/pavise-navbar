@@ -1,216 +1,49 @@
 ---
-import Chevron from "@/components/icons/chevron.svg";
-import Burger from "@/components/icons/burger.svg";
-import User from "@/components/icons/user.svg";
-import Close from "@/components/icons/close.svg";
-import Search from "@/components/icons/search.svg";
-import Arrow from "@/components/icons/arrow.svg";
-import MapIndicator from "@/components/icons/map-indicator.svg";
-import Question from "@/components/icons/question.svg";
-import Instagram from "@/components/icons/instagram.svg";
-import Facebook from "@/components/icons/facebook.svg";
-
-import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
+import Burger from "@/components/burger.astro";
+import Logo from "@/components/logo.astro";
+import NavMobile from "@/components/nav-mobile.astro";
+import Nav1 from "@/components/nav-1.astro";
+import Nav2 from "@/components/nav-2.astro";
 ---
 
-<header class="fixed inset-x-0 top-0">
+<header class="fixed inset-x-0 top-0 z-[99999999999999999999999999999]">
   <div
-    class="mx-auto grid max-w-[1600px] grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
+    class="mx-auto grid max-w-[1600px] grid-cols-3 items-center bg-black px-[15px] py-[15px] lg:px-10 lg:py-5"
   >
-    <button aria-label="Burger" class="w-fit lg:hidden" id="burger">
-      <Burger class="size-4 opacity-70" />
-    </button>
-    <nav
-      class:list={[
-        "flex-end hidden gap-x-1.5 lg:flex lg:gap-x-7",
-        "*:flex *:shrink-0 *:items-center *:gap-x-1 *:text-right *:leading-none *:font-semibold *:uppercase *:transition-opacity lg:*:gap-x-1.5",
-        "*:hidden *:text-[13px] *:lg:flex *:lg:text-[15px]",
-      ]}
-    >
-      <a href="#" class="group/item item hover:!opacity-100">
-        Shop
-        <Chevron
-          width={9}
-          height={5}
-          class="delay-100 group-hover/item:rotate-180"
-        />
-      </a>
-      <a href="#" class="group/item item hover:opacity-100">
-        Science
-        <Chevron
-          width={9}
-          height={5}
-          class="delay-100 group-hover/item:rotate-180"
-        />
-      </a>
-      <a href="#" class="group/item item hover:opacity-100">
-        In the lab
-        <Chevron
-          width={9}
-          height={5}
-          class="delay-100 group-hover/item:rotate-180"
-        />
-      </a>
-    </nav>
-    <div class="flex justify-center">
-      <a href="/" aria-label="Pavise logo">
-        <img
-          src="/images/logo.webp"
-          alt="Pavise Logo"
-          class="logo aspect-[93/29] h-[21px] lg:h-[29px]"
-        />
-      </a>
-    </div>
-    <nav
-      class:list={[
-        "flex justify-end gap-x-1.5 lg:gap-x-4.5",
-        "*:shrink-0 *:text-right *:font-semibold *:uppercase lg:*:pb-[5px]",
-        "*:hidden *:text-[13px] *:last-of-type:block *:lg:block lg:*:text-[15px]",
-      ]}
-    >
-      <a href="#" class="nav-item-hover-border">Partner locator</a>
-      <a href="#" class="nav-item-hover-border">Search</a>
-      <a href="#" class="nav-item-hover-border">Account</a>
-      <a href="#" class="nav-item-hover-border">Cart(0)</a>
-    </nav>
+    <Burger />
+    <Nav1 />
+    <Logo />
+    <Nav2 />
   </div>
+
+  <NavMobile />
 </header>
 
-<nav
-  class="fixed inset-0 flex -translate-x-full flex-col bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
-  id="nav-mobile"
->
-  <header
-    class="mx-auto grid w-full grid-cols-3 items-center px-[15px] py-[15px] lg:px-10 lg:py-5"
-  >
-    <button class="item-center flex w-fit gap-1">
-      <User class="h-auto w-[13px]" />
-      <a href="#" class="text-[13px] underline underline-offset-2"> Sign in </a>
-    </button>
-    <div class="flex justify-center">
-      <a href="/" aria-label="Pavise logo">
-        <img
-          src="/images/logo.webp"
-          alt="Pavise Logo"
-          class="logo aspect-[93/29] h-[21px] lg:h-[29px]"
-        />
-      </a>
-    </div>
-    <button aria-label="Burger close" class="ml-auto w-fit" id="burger-close">
-      <Close class="size-3.5" />
-    </button>
-  </header>
-  <section
-    class="flex w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
-  >
-    <div class="mt-1.5 flex w-full gap-2 rounded-full border border-white px-4">
-      <Search class="" width={18} />
-      <input
-        type="text"
-        placeholder="Search"
-        class="focus:outline-non h-[45px] w-full bg-transparent text-[13px] font-semibold text-white placeholder:text-white"
-      />
-    </div>
-
-    <nav
-      class:list={[
-        "mb-auto flex flex-col items-start justify-center gap-[20px] lg:gap-[12px]",
-        "*:shrink-0 *:text-right *:font-semibold *:capitalize *:first-of-type:ml-0 lg:*:pb-[5px]",
-        "*:text-sm *:last-of-type:block *:lg:block lg:*:text-[15px]",
-      ]}
-    >
-      <a href="#" class="nav-item-hover-border">Skincare</a>
-      <a href="#" class="nav-item-hover-border">Bundles</a>
-      <a href="#" class="nav-item-hover-border">Refills</a>
-      <a href="#" class="nav-item-hover-border">UV Camera</a>
-    </nav>
-
-    <NavMobileCarousel />
-
-    <button
-      class="max-h-[38.91px] w-full border border-white px-4 py-3 text-center text-[13px] leading-none font-semibold uppercase"
-    >
-      Shop All
-    </button>
-  </section>
-
-  <ul
-    class:list={[
-      "flex-grow pt-6",
-      "*:flex *:items-center *:border-y *:border-white/50 *:px-[15px] *:py-3 *:text-lg *:uppercase *:first-of-type:border-b-0",
-    ]}
-  >
-    <li>
-      Science
-      <Arrow width={14} height={14} class="ml-auto" />
-    </li>
-    <li>
-      In the lab
-      <Arrow width={14} height={14} class="ml-auto" />
-    </li>
-  </ul>
-
-  <footer class="flex flex-col gap-6 px-[15px] py-4">
-    <nav
-      class:list={[
-        "flex flex-col items-start gap-2",
-        "*:flex *:items-center *:gap-2 *:text-[13px] *:text-white *:underline",
-      ]}
-    >
-      <a href="#">
-        <MapIndicator width={14} height={14} class="inline-block" />
-        Partner locator
-      </a>
-      <a href="#">
-        <Question width={14} height={14} class="inline-block" />
-        FAQ
-      </a>
-    </nav>
-    <nav class="flex gap-6 pb-6">
-      <a aria-label="instagram" href="#">
-        <Instagram height={20} class="inline-block" />
-      </a>
-      <a aria-label="facebook" href="#">
-        <Facebook height={20} class="inline-block" />
-      </a>
-    </nav>
-  </footer>
-</nav>
-
-<style>
-  nav:has(.item:hover) .item:not(:hover),
-  nav:has(.item:focus-visible) .item:not(:focus-visible) {
-    opacity: 0.5;
-  }
-
+<style is:global>
   .nav-item-hover-border {
     background-image: linear-gradient(to bottom, transparent 20%, #fff 21%);
     background-position: 50% 1.3rem;
     background-size: 0 2px;
     background-repeat: no-repeat;
     transition: background-size 0.3s;
+    padding-bottom: 5px;
 
     &:hover {
       background-size: 100% 2px;
       transition: background-size 0.3s;
     }
   }
+
+  .nav-item-hover-border-variant {
+    background-image: linear-gradient(to bottom, transparent 20%, #fff 21%);
+    background-position: 50% 1.3rem;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s;
+    padding-bottom: 5px;
+
+    &:hover {
+      background-size: 0 2px;
+    }
+  }
 </style>
-
-<script>
-  const burger = document.getElementById("burger") as HTMLButtonElement;
-  const burgerClose = document.getElementById(
-    "burger-close",
-  ) as HTMLButtonElement;
-  const navMobile = document.getElementById("nav-mobile") as HTMLDivElement;
-
-  burger.addEventListener("click", () => {
-    navMobile.classList.toggle("-translate-x-full");
-    document.body.classList.toggle("overflow-y-hidden");
-  });
-
-  burgerClose.addEventListener("click", () => {
-    navMobile.classList.toggle("-translate-x-full");
-    document.body.classList.toggle("overflow-y-auto");
-  });
-</script>
