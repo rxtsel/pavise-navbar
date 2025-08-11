@@ -65,7 +65,7 @@ const previewProducts = [
           <img
             src={p.picture}
             alt={`Product ${p.name}`}
-            class="ojbect-cover aspect-square size-[161.48px] rounded-lg border-2 border-white/50"
+            class="aspect-square size-[161.48px] max-h-[161.48px] max-w-[161.48px] min-w-[161.48px] rounded-lg border-2 border-white/50 object-cover"
           />
           <h3 class="pt-2 text-[10px] font-semibold">{p.name}</h3>
         </li>
@@ -116,7 +116,7 @@ const previewProducts = [
     loop: false,
     modules: [Pagination],
     slidesPerView: 2.5,
-    spaceBetween: 10,
+    spaceBetween: 65,
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",

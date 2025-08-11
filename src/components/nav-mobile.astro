@@ -13,7 +13,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 ---
 
 <nav
-  class="fixed inset-0 flex -translate-x-full flex-col overflow-y-auto bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
+  class="fixed inset-0 grid -translate-x-full grid-cols-1 flex-col overflow-y-auto bg-black transition-transform ease-in-out peer-has-checked:-translate-x-0"
   id="nav-mobile"
 >
   <header
@@ -37,7 +37,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
     </button>
   </header>
   <section
-    class="flex min-h-fit w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
+    class="flex h-max min-h-max w-full flex-col items-start gap-y-6 overflow-x-hidden px-[15px] lg:px-10"
   >
     <div class="mt-1.5 flex w-full gap-2 rounded-full border border-white px-4">
       <Search class="" width={18} />
@@ -61,7 +61,7 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 
   <ul
     class:list={[
-      "flex-grow pt-6",
+      "pt-6",
       "*:flex *:items-center *:border-y *:border-white/50 *:px-[15px] *:py-3 *:text-lg *:uppercase *:first-of-type:border-b-0",
     ]}
   >
@@ -111,11 +111,11 @@ import NavMobileCarousel from "@/components/nav-mobile-carousel.astro";
 
   burger.addEventListener("click", () => {
     navMobile.classList.toggle("-translate-x-full");
-    document.body.classList.toggle("overflow-y-hidden");
+    document.body.classList.add("overflow-y-hidden");
   });
 
   burgerClose.addEventListener("click", () => {
     navMobile.classList.toggle("-translate-x-full");
-    document.body.classList.toggle("overflow-y-auto");
+    document.body.classList.remove("overflow-y-auto");
   });
 </script>
